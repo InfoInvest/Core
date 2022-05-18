@@ -26,4 +26,4 @@ jobs:
     - name: Push NuGet
       run: |
         cd out
-        dotnet nuget push *.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source -name github "https://nuget.pkg.github.com/InfoInvest/index.json" --skip-duplicate 
+        dotnet nuget push *.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} -s "https://nuget.pkg.github.com/InfoInvest/index.json"

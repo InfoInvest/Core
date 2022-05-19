@@ -11,7 +11,7 @@ namespace API
 
             foreach (var type in types)
             {
-                endpointDefinitions.AddRange(GetEndPoints(type).Select(Activator.CreateInstance).Cast<IEndpointDefinition>());
+                endpointDefinitions.AddRange(GetEndpoints(type).Select(Activator.CreateInstance).Cast<IEndpointDefinition>());
             }
 
             foreach (var endpointDefinition in endpointDefinitions)
@@ -22,15 +22,14 @@ namespace API
             services.AddSingleton(endpointDefinitions);
         }
 
-        private static IEnumerable<Type> GetEndPoints(Type type)
+        private static IEnumerable<Type> GetEndpoints(Type type)
         {
             return type.Assembly.ExportedTypes.Where(x => typeof(IEndpointDefinition).IsAssignableFrom(x) && !x.IsInterface);
         }
 
-
-        public static void UseEndpointDefinitions(this IApplicationBuilder app)
+        public static void UseEndpointDefinitions(this WebApplication app)
         {
-            var definitions = app.ApplicationServices.GetRequiredService<IReadOnlyCollection<IEndpointDefinition>>();
+            var definitions = app.Services.GetRequiredService<IReadOnlyCollection<IEndpointDefinition>>();
 
             foreach (var endpointDefinition in definitions)
             {

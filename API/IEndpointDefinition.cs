@@ -6,6 +6,6 @@ namespace API
     public interface IEndpointDefinition
     {
         void DefineServices(IServiceCollection services);
-        void DefineEndpoints(IApplicationBuilder app);
+        void DefineEndpoints(WebApplication app);
     }
 }

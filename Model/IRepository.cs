@@ -1,4 +1,4 @@
-﻿namespace Model
+﻿namespace Core.Model
 {
     public interface IRepository<T>
     {

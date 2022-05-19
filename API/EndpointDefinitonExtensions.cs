@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace API
+namespace Core.API
 {
     public static class EndpointDefinitonExtensions
     {

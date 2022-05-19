@@ -29,7 +29,7 @@ namespace Core.API
 
         public static void UseEndpointDefinitions(this WebApplication app)
         {
-            var definitions = app.Services.GetRequiredService<IReadOnlyCollection<IEndpointDefinition>>();
+            var definitions = app.Services.GetRequiredService<List<IEndpointDefinition>>();
 
             foreach (var endpointDefinition in definitions)
             {

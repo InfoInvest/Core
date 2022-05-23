@@ -1,6 +1,6 @@
 ﻿namespace Core.Model
 {
-    public interface IRepository<T>
+    public interface IRepository<T> where T : Entity
     {
         public T? GetById(Guid id);
         public List<T> GetRange(int start, int end);

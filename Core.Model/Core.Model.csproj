@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>InfoInvest.Core.Model</PackageId>
-		<Version>3.0.0</Version>
+		<Version>4.0.0</Version>
 		<Authors>João Xavier</Authors>
 		<Company>Info Invest</Company>
 		<RepositoryUrl>https://github.com/InfoInvest/Core</RepositoryUrl>

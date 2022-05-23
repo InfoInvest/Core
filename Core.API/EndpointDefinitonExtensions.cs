@@ -14,11 +14,6 @@ namespace Core.API
                 endpointDefinitions.AddRange(GetEndpoints(type).Select(Activator.CreateInstance).Cast<IEndpointDefinition>());
             }
 
-            foreach (var endpointDefinition in endpointDefinitions)
-            {
-                endpointDefinition.DefineServices(services);
-            }
-
             services.AddSingleton(endpointDefinitions);
         }
 
